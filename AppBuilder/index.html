@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-xs-12 text-center">
+            <h1>Light Sensor</h1>
+        </div>
+        <div id="analog" class="col-sm-6 col-xs-12">
+            <div class="analogclass">
+                <img class="analogsensor" src="img/light.png" />
+                <span class="analogvalue" id="lightvalue">none</span>
+                <br>
+            </div>
+
+            <!-- <div class="analogclass"> -->
+            <!-- <img class="analogsensor" src="img/temp.png" /> -->
+            <!-- <span class="analogvalue" id="temperaturevalue">none</span> -->
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <script>
+        var light;
+
+        setup();
+
+        function lop() {
+            if (cpf) {
+                light = cpf.get('light sensor');
+                // light=cpf.get("a0");
+                document.getElementById('lightvalue').innerHTML = light;
+            } setTimeout(loop, 1000);
+        }
+
+        function setup() {
+            if (cpf)
+                cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1,"INPUT"]');
+            //document.getElementById("demo").innerHTML += ret + "<br>";
+        }
+    </script>
+</body>
+
+</html>
