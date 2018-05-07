@@ -52,13 +52,13 @@
             }
             if (light < 512) {
                 result = "環境亮度不足";
-                document.getElementById("result").result;
+                document.getElementById("result").innerHTML = result;
             } else {
                 result = "環境明亮";
-                document.getElementById("result").result;
+                document.getElementById("result").innerHTML = result;
             }
             count += 1;
-            document.getElementById("count").count;
+            document.getElementById("count").innerHTML = count;
             setTimeout(loop, 1000);
         }
         loop();
