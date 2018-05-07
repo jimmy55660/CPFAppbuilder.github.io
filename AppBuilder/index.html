@@ -19,7 +19,7 @@
         <div id="analog" class="col-sm-6 col-xs-12 text-center">
             <div class="analogclass">
                 <img class="analogsensor" width="100px" src="img/light.png" />
-                <span class="analogvalue" id="lightvalue">none</span>
+                <span class="analogvalue" id="lightvalue"></span>
                 <br>
             </div>
 
@@ -37,8 +37,7 @@
 
         function lop() {
             if (cpf) {
-                light = cpf.get('light sensor');
-                // light=cpf.get("a0");
+                light = cpf.get('a0');
                 document.getElementById('lightvalue').innerHTML = light;
             } setTimeout(loop, 1000);
         }
