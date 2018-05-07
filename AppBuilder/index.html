@@ -23,8 +23,8 @@
                 <br>
             </div>
             <div class="col-sm-6 col-xs-12 text-center">
-                <span class="analogvalue" id="result"></span>
-                <span class="analogvalue" id="count"></span>
+                <span id="resultvalue"></span>
+                <span id="countvalue"></span>
             </div>
 
             <!-- <div class="analogclass"> -->
@@ -52,13 +52,13 @@
             }
             if (light < 512) {
                 result = "環境亮度不足";
-                document.getElementById("result").innerHTML = result;
+                document.getElementById("resultvalue").innerHTML = result;
             } else {
                 result = "環境明亮";
-                document.getElementById("result").innerHTML = result;
+                document.getElementById("resultvalue").innerHTML = result;
             }
             count += 1;
-            document.getElementById("count").innerHTML = count;
+            document.getElementById("countvalue").innerHTML = count;
             setTimeout(loop, 1000);
         }
         loop();
