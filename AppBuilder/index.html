@@ -35,15 +35,16 @@
     </div>
 
     <script>
-        function loop() {
-            var light;
-            var result;
-            var count = 0;
+        var light;
+        var result;
+        var count = 0;
 
+        function loop() {
             if (cpf) {
+                cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"]');
+
                 light = cpf.get("a0");
                 document.getElementById("lightvalue").innerHTML = light;
-                cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"]');
             }
             if (light < 512) {
                 result = "環境亮度不足";
@@ -56,7 +57,6 @@
             document.getElementById("count").count;
         } setTimeout(loop, 1000);
         loop();
-
     </script>
 </body>
 
