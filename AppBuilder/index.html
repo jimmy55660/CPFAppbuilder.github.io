@@ -37,12 +37,15 @@
 
     <script>
         var light;
-        var result= "";
+        var result = "";
         var count = 0;
+        // var lighton = document.getElementById("lighton");
+        // var lightoff = document.getElementById("lightoff");
+
         setup();
 
         function setup() {
-            cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"]');
+            cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode","digital","2","OUTPUT"]');
             loop();
         }
 
@@ -54,15 +57,20 @@
             if (light < 512) {
                 result = "環境亮度不足";
                 document.getElementById("resultvalue").innerHTML = result;
+                cpf.request('["grove_LEDbar_setLed", 2 , 1 ]');
             } else {
                 result = "環境明亮";
                 document.getElementById("resultvalue").innerHTML = result;
+                cpf.request('["grove_LEDbar_setLed", 2 , 0 ]');
             }
             count += 1;
             document.getElementById("countvalue").innerHTML = count;
             setTimeout(loop, 1000);
+        } loop();
+
+        function openLED() {
+
         }
-        loop();
     </script>
 </body>
 
