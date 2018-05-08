@@ -61,12 +61,12 @@
                 result = "環境亮度不足";
                 document.getElementById("resultvalue").innerHTML = result;
                 document.getElementById("LEDvalue").innerHTML = "lighton"
-                cpf.request('["digitalWrite", 2 , 1 ]');
+                cpf.request('["digitalWrite", 2 , 1]');
             } else {
                 result = "環境明亮";
                 document.getElementById("resultvalue").innerHTML = result;
                 document.getElementById("LEDvalue").innerHTML = "lightoff"
-                cpf.request('["digitalWrite", 2 , 0 ]');
+                cpf.request('["digitalWrite", 2 , 0]');
             }
             count += 1;
             document.getElementById("countvalue").innerHTML = count;
