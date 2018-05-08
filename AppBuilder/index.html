@@ -27,6 +27,9 @@
                 <br>
                 <span id="countvalue"></span>
             </div>
+            <div class="col-sm-6 col-xs-12 text-center">
+                <span id="LEDvalue"></span>
+            </div>
 
             <!-- <div class="analogclass"> -->
             <!-- <img class="analogsensor" src="img/temp.png" /> -->
@@ -39,8 +42,6 @@
         var light;
         var result = "";
         var count = 0;
-        // var lighton = document.getElementById("lighton");
-        // var lightoff = document.getElementById("lightoff");
 
         setup();
 
@@ -57,10 +58,13 @@
             if (light < 512) {
                 result = "環境亮度不足";
                 document.getElementById("resultvalue").innerHTML = result;
+                document.getElementById("LEDvalue").innerHTML="lighton"
                 cpf.request('["grove_LEDbar_setLed", 2 , 1 ]');
             } else {
                 result = "環境明亮";
                 document.getElementById("resultvalue").innerHTML = result;
+                
+                document.getElementById("LEDvalue").innerHTML="lightoff"
                 cpf.request('["grove_LEDbar_setLed", 2 , 0 ]');
             }
             count += 1;
